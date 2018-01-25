@@ -57,13 +57,13 @@ parser.add_argument('--resname', '-r', help="residue of the ligand to extrat fro
 parser.add_argument('--reschain', '-c', help="chain of the ligand to extrat from pdb", default="Z")
 EOF
 
+source env_var.sh
+
+
 #Check env variables
 if [ "$MGLTOOLS" == '' ]; then
     echo "MGLTOOLS IS NOT EXPORTED"
     exit 1
-elif [ "$AMBERHOME" == '' ]; then
-    echo "AMBERHOME IS NOT EXPORTED"
-    exit 1   
 elif [[ $(which pythonsh 2>&1 > /dev/null) != "" ]]; then
 	echo "set pythonsh binary folder to $PATH with: $: set export PATH=/path/to/binary/:$PATH"
 	exit 1
